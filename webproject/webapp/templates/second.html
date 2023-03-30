@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0">
+        {% load static %}
+      <img src="{% static 'rpm,aV_vs_K.png' %}" alt="My image" height="50%">
+      </div>
+      <div class="flex-grow-1 ms-3">
+          <p>sample dataset for X1 follows [537,600,750,....,1100]</p>
+          <p>sample dataset for X2 follows [11.71,20,40.......,60]</p>
+          <form action="" method="post">
+              {% csrf_token %}
+              <input type="number" name="username">
+              <input type="number" name="username2">
+              <button type="submit">submit</button>
+          </form>
+          <p>{{ predict }}</p>
+          <p> the ignition temperature of AZ91D is 873.15 K</p>
+          <p>accuracy of the model is {{score}}</p>
+      </div>
+    </div>
+{% endblock %}

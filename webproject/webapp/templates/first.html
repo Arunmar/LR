@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0">
+        {% load static %}
+      <img src="{% static 'rpm_vs_K_2.png' %}" alt="My image" width="100%">
+      </div>
+      <div class="flex-grow-1 ms-3">
+          <p>sample dataset for X follows [537,600,750,....,1100]</p>
+          <form action="" method="post">
+              {% csrf_token %}
+              <input type="number" name="username">
+              <button type="submit">submit</button>
+          </form>
+          <p>{{ predict }}</p>
+          <p> the ignition temperature of AZ91D is 873.15 K</p>
+          <p>accuracy of the model is {{score}}</p>
+      </div>
+    </div>
+{% endblock %}
